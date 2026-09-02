@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
+import 'gym_search_screen.dart';
 import 'home_screen.dart';
 import 'placeholder_screens.dart';
 import 'video_reels_screen.dart';
@@ -20,7 +21,7 @@ class _MainScaffoldScreenState extends State<MainScaffoldScreen> {
     HomeScreen(), // 0: Home Dashboard
     VideoReelsScreen(), // 1: Video Reels Format
     WorkoutLoggerScreen(), // 2: Dumbbell / Workout Logger
-    SearchScreen(), // 3: Search
+    GymSearchScreen(), // 3: Gym Discovery & Search
     ProfileScreen(), // 4: Profile
   ];
 
@@ -124,20 +125,20 @@ class _MainScaffoldScreenState extends State<MainScaffoldScreen> {
           Row(
             mainAxisSize: MainAxisSize.min,
             children: const [
-              Icon(
-                Icons.local_fire_department_rounded,
-                color: Color(0xFFFF9E0B),
-                size: 28,
-              ),
-              SizedBox(width: 3),
               Text(
-                '0',
+                '4',
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w900,
                   color: AppTheme.textPrimary,
                 ),
               ),
+              Icon(
+                Icons.local_fire_department_rounded,
+                color: Color(0xFFFF9E0B),
+                size: 28,
+              ),
+              SizedBox(width: 3),
             ],
           ),
           const SizedBox(width: 6),
