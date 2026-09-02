@@ -165,9 +165,18 @@ class _AddWorkoutLoggerScreenState extends ConsumerState<AddWorkoutLoggerScreen>
                 child: Row(
                   children: _categories.map((category) {
                     final isSelected = _selectedCategory == category;
+                    final catColor = AppTheme.getCategoryColor(category);
                     return Padding(
                       padding: const EdgeInsets.only(right: 8.0),
                       child: ChoiceChip(
+                        avatar: Container(
+                          width: 8,
+                          height: 8,
+                          decoration: BoxDecoration(
+                            color: catColor,
+                            shape: BoxShape.circle,
+                          ),
+                        ),
                         label: Text(category),
                         selected: isSelected,
                         onSelected: (selected) {
@@ -177,7 +186,7 @@ class _AddWorkoutLoggerScreenState extends ConsumerState<AddWorkoutLoggerScreen>
                             });
                           }
                         },
-                        selectedColor: AppTheme.primary,
+                        selectedColor: catColor,
                         labelStyle: TextStyle(
                           color: isSelected ? const Color(0xFF000000) : AppTheme.textSecondary,
                           fontWeight: isSelected ? FontWeight.w800 : FontWeight.w500,
@@ -186,7 +195,7 @@ class _AddWorkoutLoggerScreenState extends ConsumerState<AddWorkoutLoggerScreen>
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                           side: BorderSide(
-                            color: isSelected ? AppTheme.primary : AppTheme.border,
+                            color: isSelected ? catColor : AppTheme.border,
                           ),
                         ),
                       ),

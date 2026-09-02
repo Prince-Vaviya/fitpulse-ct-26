@@ -12,9 +12,36 @@ class AppTheme {
   static const Color borderLight = Color(0xFF333333);
   static const Color textPrimary = Color(0xFFFFFFFF);
   static const Color textSecondary = Color(0xFF9E9E9E); // Neutral gray
-  static const Color textMuted = Color(0xFF6B7280);
   static const Color error = Color(0xFFFF4444);
   static const Color warning = Color(0xFFFFB300);
+
+  // Dedicated vibrant shades for category discrimination
+  static Color getCategoryColor(String category) {
+    switch (category.toLowerCase().trim()) {
+      case 'chest':
+        return const Color(0xFF38BDF8); // Electric Sky Blue
+      case 'back':
+        return const Color(0xFF8B5CF6); // Deep Electric Violet
+      case 'legs':
+        return const Color(0xFFEC4899); // Vibrant Hot Pink
+      case 'shoulders':
+        return const Color(0xFFD946EF); // Radiant Magenta
+      case 'arms':
+      case 'biceps':
+      case 'triceps':
+        return const Color(0xFFFF7A00); // High-Voltage Orange
+      case 'core':
+      case 'abs':
+      case 'abs & core':
+        return const Color(0xFFFBBF24); // Amber Gold
+      case 'cardio':
+        return const Color(0xFF00E5FF); // Electric Cyan
+      case 'hiit':
+        return const Color(0xFFFF3366); // Neon Coral Red
+      default:
+        return primary;
+    }
+  }
 
   static ThemeData get darkTheme {
     return ThemeData(

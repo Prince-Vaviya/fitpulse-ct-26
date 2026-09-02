@@ -152,24 +152,29 @@ class _WorkoutDetailsScreenState extends ConsumerState<WorkoutDetailsScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                        decoration: BoxDecoration(
-                          color: AppTheme.primary.withValues(alpha: 0.15),
-                          borderRadius: BorderRadius.circular(8),
-                          border: Border.all(
-                            color: AppTheme.primary.withValues(alpha: 0.3),
-                          ),
-                        ),
-                        child: Text(
-                          workout.category.toUpperCase(),
-                          style: const TextStyle(
-                            color: AppTheme.primary,
-                            fontWeight: FontWeight.w800,
-                            fontSize: 12,
-                            letterSpacing: 1,
-                          ),
-                        ),
+                      Builder(
+                        builder: (context) {
+                          final catColor = AppTheme.getCategoryColor(workout.category);
+                          return Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                            decoration: BoxDecoration(
+                              color: catColor.withValues(alpha: 0.15),
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(
+                                color: catColor.withValues(alpha: 0.35),
+                              ),
+                            ),
+                            child: Text(
+                              workout.category.toUpperCase(),
+                              style: TextStyle(
+                                color: catColor,
+                                fontWeight: FontWeight.w800,
+                                fontSize: 12,
+                                letterSpacing: 1,
+                              ),
+                            ),
+                          );
+                        },
                       ),
                       Text(
                         'ID: ${workout.id.length > 6 ? workout.id.substring(workout.id.length - 6) : workout.id}',
