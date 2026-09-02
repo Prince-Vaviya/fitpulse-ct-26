@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 import 'gym_search_screen.dart';
 import 'home_screen.dart';
-import 'placeholder_screens.dart';
+import 'profile_screen.dart';
 import 'video_reels_screen.dart';
 import 'workout_logger_screen.dart';
 
