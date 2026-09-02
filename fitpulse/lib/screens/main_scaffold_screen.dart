@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 import 'home_screen.dart';
 import 'placeholder_screens.dart';
+import 'video_reels_screen.dart';
 import 'workout_logger_screen.dart';
 
 class MainScaffoldScreen extends StatefulWidget {
@@ -17,7 +18,7 @@ class _MainScaffoldScreenState extends State<MainScaffoldScreen> {
 
   final List<Widget> _screens = const [
     HomeScreen(), // 0: Home Dashboard
-    VideoScreen(), // 1: Video Guides
+    VideoReelsScreen(), // 1: Video Reels Format
     WorkoutLoggerScreen(), // 2: Dumbbell / Workout Logger
     SearchScreen(), // 3: Search
     ProfileScreen(), // 4: Profile
